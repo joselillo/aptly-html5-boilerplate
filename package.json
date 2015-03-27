@@ -1,0 +1,25 @@
+{
+  "name": "aptly-html5-boilerplate",
+  "version": "0.0.1-dev",
+  "description": "Html5/CSS Boilerplate template for Aptly apps",
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:codemitte/aptly-html5-boilerplate.git"
+  },
+  "author": "Johannes Heinen <johannes.heinen@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt-cli": "~0.1.13",
+    "grunt": "~0.4.5",
+    "grunt-contrib-concat": "~0.5.1",
+    "grunt-bower": "~0.18.0",
+    "grunt-contrib-less": "~1.0.0",
+    "bower": "~1.3.12",
+    "grunt-contrib-uglify": "~0.8.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-contrib-cssmin": "~0.12.2",
+    "grunt-contrib-clean": "~0.6.0",
+    "grunt-contrib-copy": "~0.8.0",
+    "grunt-modernizr": "~0.6.0"
+  }
+}

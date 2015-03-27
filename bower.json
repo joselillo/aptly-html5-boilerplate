@@ -1,0 +1,32 @@
+{
+  "name": "aptly-html5-boilerplate",
+  "version": "0.0.1-dev",
+  "authors": [
+    "Johannes Heinen <johannes.heinen@gmail.com>"
+  ],
+  "description": "Html5 boilerplate template for Aptly Apps",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "Aptly",
+    "CSS",
+    "Html5"
+  ],
+  "license": "MIT",
+  "homepage": "http://aptly.de",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "webshim": "~1.15.7",
+    "bootstrap": "~3.3.4",
+    "modernizr": "~2.8.3"
+  }
+}

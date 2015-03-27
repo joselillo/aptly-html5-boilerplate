@@ -1,0 +1,206 @@
+body { padding-top: 61px; } /* NAV PADDING, -1 to avoid zoom gap */
+
+body, button, input, select, textarea
+{
+    font-family: Oxygen, Helvetica, Arial, sans-serif;
+}
+
+/* FORM HTML5 VALIDATION */
+.form-group >[class*="col-"] + .ws-errorbox {
+    padding: 0 15px;
+}
+
+.form-group.required .control-label:after {
+    content:"*";
+    color:red;
+}
+
+#main_navigation
+{
+    border-bottom: 4px #f15a29 solid;
+    background: #3d3e3f;
+}
+
+#main_navigation .navbar-brand
+{
+    padding-top: 2px;
+    padding-bottom: 2px;
+    height: 58px;
+}
+
+#main_navigation.navbar
+{
+    min-height: 58px;
+}
+
+#main_navigation .navbar-form
+{
+    padding-top: 3px;
+}
+
+#main_navigation .navbar-nav > li > a,
+#main_navigation .navbar-text
+{
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 58px;
+}
+
+#main_navigation .navbar-text a
+{
+    color: #F15A29;
+}
+
+#main_navigation .navbar-header > a,
+#main_navigation .navbar-nav > li > a
+{
+    color: #fff;
+}
+
+#main_navigation li
+{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#main_navigation .navbar-nav > li > a:hover,
+#main_navigation .navbar-nav > li.open > a,
+#main_navigation .navbar-nav > li.active > a
+{
+    background: #000;
+    color: #f15a29;
+}
+
+#main_navigation li,
+#main_navigation p
+{
+    font-size: 13px;
+    text-transform: uppercase;
+    line-height: auto;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 220px;
+}
+
+.page-footer
+{
+    background: #3D3E3F;
+    border-top: 4px #F15A29 solid;
+    color: #646562;
+
+    /* STICKY */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 180px;
+}
+
+.page-footer p
+{
+    font-size: 12px;
+}
+
+.page-footer a
+{
+    color: #898989;
+}
+.page-footer a:hover
+{
+    color: #fff;
+}
+
+h1
+{
+    color: #F15A29;
+    font-size: 30px;
+    line-height: auto;
+}
+
+.jumbotron
+{
+    background: #F15A29;
+    color: #fff;
+}
+
+.jumbotron form
+{
+    margin-top: 35px;
+}
+
+.jumbotron p.help-block
+{
+    margin-bottom: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+.jumbotron h1 small,
+.jumbotron h1 a,
+.jumbotron h2,
+.jumbotron .help-block
+{
+    color: #fff;
+}
+
+.jumbotron p a,
+.jumbotron li a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.jumbotron p a:hover,
+.jumbotron li a:hover {
+    color: #333;
+}
+
+.jumbotron h1 small
+{
+    opacity: 0.4;
+    -moz-opacity: 0.4;
+    -webkit-opacity: 0.4;
+    -o-opacity: 0.4;
+}
+
+h2
+{
+    font-size:  16px;
+    color: #646562;
+    font-weight: bold;
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+body
+{
+    color: #646562;
+}
+
+p, li
+{
+    font-size: 16px;
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+    line-height: auto;
+}
+
+label, .help-block
+{
+    font-size: 14px;
+}
+
+.alert
+{
+    margin-bottom: 0;
+}

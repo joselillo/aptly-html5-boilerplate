@@ -2,23 +2,31 @@ var pkgjson = require('./package.json');
 
 var config = {
     pkg: pkgjson,
-    src: 'src',
     vendor: 'bower_components',
-    dist: 'dist'
+    src: 'src',
+    dist: 'dist',
+    build: 'dist/build'
 }
 
 module.exports = function(grunt) {
 
+  config.bowerrc = grunt.file.readJSON('./.bowerrc');
+
   grunt.initConfig({
       config: config,
       pkg: config.pkg,
-      bower: grunt.file.readJSON('./.bowerrc'),
+      bower: config.bowerrc,
       watch: {
-          files: ['<%= config.src %>'],
-          tasks: ['copy']
+          main: {
+              files: ['<%= config.src %>/**'],
+              tasks: ['copy', 'uglify', 'cssmin', 'compress'],
+              options: {
+                  events: ['all']
+              }
+          }
       },
       copy: {
-          dist: {
+          main: {
               files: [
                   { expand: true, flatten: true, cwd: '<%= config.vendor %>', src: 'jquery/dist/jquery.min.js', dest: '<%=config.dist %>/vendor' },
                   { expand: true, cwd: '<%= config.vendor %>', src: 'modernizr/modernizr.js', dest: '<%=config.dist %>/vendor' },
@@ -29,7 +37,6 @@ module.exports = function(grunt) {
                   { expand: true, flatten: true, cwd: '<%= config.vendor %>', src: 'webshim/js-webshim/minified/polyfiller.js', dest: '<%=config.dist %>/vendor/webshim' },
                   { expand: true, flatten: true, cwd: '<%= config.vendor %>', src: 'webshim/js-webshim/minified/shims/*', dest: '<%=config.dist %>/vendor/webshim/shims' },
 
-                  // TODO: MINIFY
                   { expand: true, flatten: false, cwd: '<%= config.src %>', src: 'css/*', dest: '<%=config.dist %>/src' },
                   { expand: true, flatten: false, cwd: '<%= config.src %>', src: 'js/*', dest: '<%=config.dist %>/js' }
               ]
@@ -55,6 +62,22 @@ module.exports = function(grunt) {
                   ext: '.min.css'
               }]
           }
+      },
+      compress: {
+          main: {
+              type: 'zip',
+              options: {
+                  archive: '<%= config.build %>/aptly-theme.zip'
+              },
+              files: [
+                  { expand: true, cwd: '<%= config.dist %>', src: ['**'] }
+              ]
+          }
+
+      }, clean : {
+          main: {
+              src: ['<%= config.dist %>/**', '<%= config.build %>/**']
+          }
       }
   });
 
@@ -63,12 +86,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-compress');
-
+  grunt.loadNpmTasks('grunt-contrib-clean');
 
   // grunt.registerTask('default', ['jshint']);
   // grunt.registerTask('build-all', ['bower', 'concat', 'cssmin', 'copy']);
   // grunt.registerTask('build-all', ['bower', 'modernizr', 'concat', 'cssmin', 'compress']);
-  grunt.registerTask('build-all', ['copy', 'uglify', 'cssmin']);
-  grunt.registerTask('watch', ['watch', 'copy']);
+  grunt.registerTask('build-all', ['copy', 'uglify', 'cssmin', 'compress']);
+  grunt.registerTask('build-watch', ['watch']);
 
 };

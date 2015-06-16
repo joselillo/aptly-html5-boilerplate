@@ -1,6 +1,7 @@
 {
   "name": "aptly-html5-boilerplate",
-  "version": "0.0.1-dev",
+  "version": "0.0.1",
+  "main": "src/css/style.css",
   "authors": [
     "Johannes Heinen <johannes.heinen@gmail.com>"
   ],
@@ -15,7 +16,7 @@
   ],
   "license": "MIT",
   "homepage": "http://aptly.de",
-  "private": true,
+  "private": false,
   "ignore": [
     "**/.*",
     "node_modules",
